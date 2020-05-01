@@ -128,6 +128,11 @@ void assemblyK(element e,Matrix localK,Matrix &K,int nnodes){
     K.at(index4).at(index1) += localK.at(3).at(0);
     K.at(index4).at(index2) += localK.at(3).at(1);
 
+    K.at(index3).at(index3) += localK.at(2).at(2);
+    K.at(index3).at(index4) += localK.at(2).at(3);
+    K.at(index4).at(index3) += localK.at(3).at(2);
+    K.at(index4).at(index4) += localK.at(3).at(3);
+
 }
 
 void assemblyb(element e,Vector localb,Vector &b){
